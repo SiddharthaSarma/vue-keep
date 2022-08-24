@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="fixed z-30 w-full bg-white border-b border-black-200">
-      <div class="px-6 py-3">
+      <div class="px-4 py-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center justify-start">
             <button class="p-2 text-gray-600 rounded cursor-pointer">
@@ -57,14 +57,14 @@
       </div>
     </nav>
     <div class="pt-12 lg:flex">
-      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto border-b transition-all lg:border-r lg:h-screen" :class="[isSidebarOpen ? 'lg:w-64': 'lg:w-16']">
+      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto lg:h-screen" :class="[isSidebarOpen ? 'lg:w-64': 'lg:w-32']">
         <div class="flex flex-col justify-between mt-6">
           <aside>
             <ul>
-              <li v-for="item of sidebarList" :key="item.title" class="mb-4">
-                <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-yellow-200 rounded-lg" href="#">
+              <li v-for="item of sidebarList" :key="item.title" class="mb-4 px-4 hover:bg-yellow-200 rounded-r-full">
+                <a class="flex items-center py-2 text-gray-700" href="#">
                   <component :is="item.icon" />
-                  <span class="mx-4 font-medium">{{item.title}}</span>
+                  <span class="mx-4 font-medium" :class="{hidden: !isSidebarOpen}">{{item.title}}</span>
                 </a>
               </li>
             </ul>
@@ -82,22 +82,33 @@
 
 <script>
 // eslint-disable-next-line
-import { DashboardIcon, ListIcon, SettingsIcon } from './icons';
+import { ArchiveIcon, BellIcon, BulbIcon, ListIcon, PencilIcon, SettingsIcon, TrashIcon } from './icons';
 export default {
   name: "DashboardScreen",
 // eslint-disable-next-line
-  components: { ListIcon, DashboardIcon, SettingsIcon },
+  components: { ListIcon, SettingsIcon },
   data() {
     return {
       isSidebarOpen: true,
       content: 'content goes here',
       sidebarList: [{
-        icon: DashboardIcon,
-        title: 'Dashboard'
+        icon: BulbIcon,
+        title: 'Notes'
       }, {
-        icon: SettingsIcon,
-        title: 'Settings'
-      }]
+        icon: BellIcon,
+        title: 'Reminders'
+      }, {
+        icon: PencilIcon ,
+        title: 'Edit labels'
+      }, {
+        icon: ArchiveIcon,
+        title: 'Archive'
+      },
+      {
+        icon: TrashIcon ,
+        title: 'Trash'
+      }
+      ]
     }
   },
   methods: {
