@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav class="fixed z-30 w-full bg-white border-b-2 border-indigo-600">
+    <nav class="fixed z-30 w-full bg-white border-b border-black-200">
       <div class="px-6 py-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center justify-start">
             <button class="p-2 text-gray-600 rounded cursor-pointer">
-              <ListIcon width="24" />
+              <ListIcon width="24" @click.native="handleClick" />
             </button>
             <a href="#" class="flex items-center text-xl font-bold">
               <span class="text-gray-800">Keep</span>
@@ -57,11 +57,11 @@
       </div>
     </nav>
     <div class="pt-12 lg:flex">
-      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-64">
+      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto border-b transition-all lg:border-r lg:h-screen" :class="[isSidebarOpen ? 'lg:w-64': 'lg:w-16']">
         <div class="flex flex-col justify-between mt-6">
           <aside>
             <ul>
-              <li v-for="item of sidebarList" :key="item.title">
+              <li v-for="item of sidebarList" :key="item.title" class="mb-4">
                 <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-yellow-200 rounded-lg" href="#">
                   <component :is="item.icon" />
                   <span class="mx-4 font-medium">{{item.title}}</span>
@@ -89,6 +89,7 @@ export default {
   components: { ListIcon, DashboardIcon, SettingsIcon },
   data() {
     return {
+      isSidebarOpen: true,
       content: 'content goes here',
       sidebarList: [{
         icon: DashboardIcon,
@@ -97,6 +98,11 @@ export default {
         icon: SettingsIcon,
         title: 'Settings'
       }]
+    }
+  },
+  methods: {
+    handleClick() {
+      this.isSidebarOpen = !this.isSidebarOpen;
     }
   }
 }
