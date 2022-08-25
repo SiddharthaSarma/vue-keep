@@ -57,15 +57,16 @@
       </div>
     </nav>
     <div class="pt-12 lg:flex">
-      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto lg:h-screen" :class="[isSidebarOpen ? 'lg:w-64': 'lg:w-32']">
+      <div class="flex flex-col w-full px-4 py-8 overflow-y-auto lg:h-screen"
+        :class="[isSidebarOpen ? 'lg:w-64' : 'lg:w-32']">
         <div class="flex flex-col justify-between mt-6">
           <aside>
             <ul>
               <li v-for="item of sidebarList" :key="item.title" class="mb-4 px-4 hover:bg-yellow-200 rounded-r-full">
-                <a class="flex items-center py-2 text-gray-700" href="#">
+                <router-link class="flex items-center py-2 text-gray-700" :to="item.path">
                   <component :is="item.icon" />
-                  <span class="mx-4 font-medium" :class="{hidden: !isSidebarOpen}">{{item.title}}</span>
-                </a>
+                  <span class="mx-4 font-medium" :class="{ hidden: !isSidebarOpen }">{{ item.title }}</span>
+                </router-link>
               </li>
             </ul>
           </aside>
@@ -73,7 +74,7 @@
       </div>
       <div class="w-full h-full p-4 m-8 overflow-y-auto">
         <div class="flex items-center justify-center p-16 mr-8 border-4 border-dotted lg:p-40">
-          {{content}}
+          <router-view></router-view>
         </div>
       </div>
     </div>
@@ -85,7 +86,7 @@
 import { ArchiveIcon, BellIcon, BulbIcon, ListIcon, PencilIcon, SettingsIcon, TrashIcon } from './icons';
 export default {
   name: "DashboardScreen",
-// eslint-disable-next-line
+  // eslint-disable-next-line
   components: { ListIcon, SettingsIcon },
   data() {
     return {
@@ -93,22 +94,26 @@ export default {
       content: 'content goes here',
       sidebarList: [{
         icon: BulbIcon,
-        title: 'Notes'
+        title: 'Notes',
+        path: '/notes'
       }, {
         icon: BellIcon,
-        title: 'Reminders'
+        title: 'Reminders',
+        path: '/reminders'
       }, {
-        icon: PencilIcon ,
-        title: 'Edit labels'
+        icon: PencilIcon,
+        title: 'Edit labels',
+        path: '/edit-labels'
       }, {
         icon: ArchiveIcon,
-        title: 'Archive'
+        title: 'Archive',
+        path: '/archive'
       },
       {
-        icon: TrashIcon ,
-        title: 'Trash'
-      }
-      ]
+        icon: TrashIcon,
+        title: 'Trash',
+        path: '/trash'
+      }]
     }
   },
   methods: {
