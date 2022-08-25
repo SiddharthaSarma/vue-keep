@@ -58,12 +58,12 @@
     </nav>
     <div class="pt-12 lg:flex">
       <div class="flex flex-col w-full pr-4 py-8 overflow-y-auto lg:h-screen"
-        :class="[isSidebarOpen ? 'lg:w-64' : 'lg:w-32']">
+        :class="[isSidebarOpen ? 'lg:w-72' : 'lg:w-32']">
         <div class="flex flex-col justify-between mt-6">
           <aside>
             <ul>
               <li v-for="item of sidebarList" :key="item.title" class="mb-4">
-                <router-link class="flex items-center px-6 py-2 text-gray-700" :to="item.path">
+                <router-link class="flex items-center px-6 py-4 text-gray-700" :to="item.path">
                   <component :is="item.icon" />
                   <span class="mx-4 font-medium" :class="{ hidden: !isSidebarOpen }">{{ item.title }}</span>
                 </router-link>
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="w-full h-full p-4 m-8 overflow-y-auto">
-        <div class="flex items-center justify-center p-16 mr-8 border-4 border-dotted lg:p-40">
+        <div class="flex items-center justify-center p-16 mr-8 lg:p-40">
           <router-view></router-view>
         </div>
       </div>
