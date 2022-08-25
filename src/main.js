@@ -40,6 +40,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  linkActiveClass: "bg-yellow-200 rounded-r-full"
 });
 
 new Vue({
