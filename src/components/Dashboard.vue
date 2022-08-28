@@ -3,19 +3,19 @@
     <nav class="fixed z-30 w-full bg-white border-b border-black-200">
       <div class="px-4 py-3">
         <div class="flex items-center justify-between">
-          <div class="flex items-center justify-start">
-            <button class="p-2 text-gray-600 rounded cursor-pointer">
-              <ListIcon width="24" @click.native="handleClick" />
-            </button>
-            <a href="#" class="flex items-center text-xl font-bold">
-              <span class="text-gray-800">Keep</span>
-            </a>
-          </div>
-          <div class="flex items-center">
-            <div class="hidden mr-6 lg:block">
+          <div class="flex w-3/6">
+            <div class="flex items-center justify-start">
+              <button class="p-2 text-gray-600 rounded cursor-pointer">
+                <ListIcon width="24" @click.native="handleClick" />
+              </button>
+              <a href="#" class="flex items-center text-xl font-bold">
+                <span class="text-gray-800">Keep</span>
+              </a>
+            </div>
+            <div class="hidden mr-6 lg:block ml-24 grow">
               <form action="#">
                 <label class="sr-only">Search</label>
-                <div class="relative mt-1 lg:w-64">
+                <div class="relative mt-1">
                   <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +25,13 @@
                     </svg>
                   </div>
                   <input type="text" name="name"
-                    class=" border  text-gray-900 sm:text-sm rounded-lg focus:outline-none focus:ring-1 block w-full pl-10 p-2.5"
+                    class="border shadow-md text-2xl text-gray-900 sm:text-sm rounded-lg focus:outline-none focus:ring-1 block w-full pl-10 p-2.5"
                     placeholder="Search">
                 </div>
               </form>
             </div>
+          </div>
+          <div class="flex items-center">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -73,7 +75,7 @@
         </div>
       </div>
       <div class="w-full h-full p-4 m-8 overflow-y-auto">
-        <div class="flex items-center justify-center p-16 mr-8 lg:p-40">
+        <div class="flex justify-center p-4">
           <router-view></router-view>
         </div>
       </div>
