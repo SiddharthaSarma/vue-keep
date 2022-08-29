@@ -62,16 +62,7 @@
       <div class="flex flex-col w-full pr-4 py-8 overflow-y-auto lg:h-screen"
         :class="[isSidebarOpen ? 'lg:w-72' : 'lg:w-32']">
         <div class="flex flex-col justify-between mt-6">
-          <aside>
-            <ul>
-              <li v-for="item of sidebarList" :key="item.title" class="mb-4">
-                <router-link class="text-gray-700" :class="[isSidebarOpen ? 'flex items-center px-6 py-4 rounded-r-full' : 'p-4 ml-4 inline-block rounded-full']" :to="item.path">
-                  <component :is="item.icon" />
-                  <span class="mx-4 font-medium" :class="{ hidden: !isSidebarOpen }">{{ item.title }}</span>
-                </router-link>
-              </li>
-            </ul>
-          </aside>
+          <Sidebar :sidebar-list="sidebarList" :is-sidebar-open="isSidebarOpen" />
         </div>
       </div>
       <div class="w-full h-full p-4 m-8 overflow-y-auto">
@@ -86,10 +77,11 @@
 <script>
 // eslint-disable-next-line
 import { ArchiveIcon, BellIcon, BulbIcon, ListIcon, PencilIcon, SettingsIcon, TrashIcon } from './icons';
+import Sidebar from './Sidebar.vue';
 export default {
   name: "DashboardScreen",
   // eslint-disable-next-line
-  components: { ListIcon, SettingsIcon },
+  components: { ListIcon, SettingsIcon, Sidebar },
   data() {
     return {
       isSidebarOpen: true,
