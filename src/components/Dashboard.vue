@@ -76,12 +76,11 @@
 
 <script>
 // eslint-disable-next-line
-import { ArchiveIcon, BellIcon, BulbIcon, ListIcon, PencilIcon, SettingsIcon, TrashIcon } from './icons';
+import { ArchiveIcon, BellIcon, BulbIcon, ListIcon, PencilIcon, TrashIcon } from './icons';
 import Sidebar from './Sidebar.vue';
 export default {
   name: "DashboardScreen",
-  // eslint-disable-next-line
-  components: { ListIcon, SettingsIcon, Sidebar },
+  components: { ListIcon, Sidebar },
   data() {
     return {
       isSidebarOpen: true,
