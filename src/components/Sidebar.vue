@@ -29,7 +29,7 @@ export default {
       default: () => []
     },
     isSidebarOpen: {
-      type: Boolean,
+      type: Boolean
     },
   },
 };
