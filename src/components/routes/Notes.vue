@@ -15,7 +15,7 @@
       class="focus-visible:outline-none p-2.5"
       @input="handleInput"
       v-html="content"
-    ></p>
+    />
   </div>
 </template>
 <script>
