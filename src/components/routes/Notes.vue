@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-1/2 border shadow-md text-2xl text-gray-900 sm:text-sm rounded-lg focus:outline-none focus:ring-1 flex flex-col"
+    class="w-1/2 border shadow-md text-2xl text-gray-900 rounded-lg focus:outline-none focus:ring-1 flex flex-col"
   >
     <input
       type="text"
