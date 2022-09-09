@@ -23,12 +23,12 @@
   </div>
 </template>
 <script>
-import { debounce } from '../../helpers/index.js';
+import { debounce } from "../../helpers/index.js";
 export default {
   name: "NotesScreen",
   data: () => ({
     opened: false,
-    defaultText: 'Take a note...',
+    defaultText: "Take a note...",
     content: "Take a note...",
     titleFocused: false,
     contentFocused: false,
@@ -44,20 +44,20 @@ export default {
       this.opened = true;
       this.contentFocused = true;
       if (this.defaultText === this.content) {
-        this.content = '';
+        this.content = "";
       }
     },
-    handleContentFocusOut: debounce(() => {
+    handleContentFocusOut: debounce(function () {
       this.contentFocused = false;
       this.toggleContentNotes();
     }, 100),
     handleTitleFocusIn() {
       this.titleFocused = true;
     },
-    handleTitleFocusOut: debounce(() => {
+    handleTitleFocusOut: debounce(function () {
       this.titleFocused = false;
       this.toggleContentNotes();
-    }, 200)
+    }, 200),
   },
 };
 </script>
