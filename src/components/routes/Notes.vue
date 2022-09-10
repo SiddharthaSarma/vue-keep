@@ -1,16 +1,29 @@
 <template>
   <div
-    class="w-1/2 border shadow-md text-2xl text-gray-900 rounded-lg focus:outline-none focus:ring-1 flex flex-col"
+    class="w-5/12 border shadow-md text-2xl text-gray-900 rounded-lg focus:outline-none focus:ring-1 flex flex-col"
   >
-    <input
-      type="text"
-      name="title"
-      class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-1 block w-full p-2.5"
-      :placeholder="!opened ? 'Take a note...' : 'Title'"
-      @focusin="handleTitleFocusIn"
-      @focusout="handleTitleFocusOut"
-      @click="opened = true"
-    />
+    <div class="flex justify-center pr-2 h-12">
+      <input
+        type="text"
+        name="title"
+        class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-1 block w-full p-2.5"
+        :placeholder="!opened ? 'Take a note...' : 'Title'"
+        @focusin="handleTitleFocusIn"
+        @focusout="handleTitleFocusOut"
+        @click="opened = true"
+      />
+      <div class="flex items-center h-full">
+        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
+          <CheckSquareIcon />
+        </div>
+        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
+          <BrushIcon class="hover:cursor-pointer" />
+        </div>
+        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
+          <ImageIcon class="hover:cursor-pointer"/>
+        </div>
+      </div>
+    </div>
     <p
       v-if="opened"
       contenteditable="true"
@@ -24,8 +37,14 @@
 </template>
 <script>
 import { debounce } from "../../helpers/index.js";
+import { BrushIcon, CheckSquareIcon, ImageIcon } from "../icons";
 export default {
   name: "NotesScreen",
+  components: {
+    CheckSquareIcon,
+    BrushIcon,
+    ImageIcon
+  },
   data: () => ({
     opened: false,
     defaultText: "Take a note...",
