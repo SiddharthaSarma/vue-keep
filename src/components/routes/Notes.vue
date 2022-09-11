@@ -1,12 +1,12 @@
 <template>
   <div
-    class="w-5/12 border shadow-md text-2xl text-gray-900 rounded-lg focus:outline-none focus:ring-1 flex flex-col"
+    class="w-5/12 border shadow-md text-2xl text-gray-900 rounded-lg flex flex-col"
   >
     <div class="flex justify-center pr-2 h-12">
       <input
         type="text"
         name="title"
-        class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-1 block w-full p-2.5"
+        class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none block w-full p-2.5"
         :placeholder="!opened ? 'Take a note...' : 'Title'"
         @focusin="handleTitleFocusIn"
         @focusout="handleTitleFocusOut"
