@@ -54,7 +54,7 @@ export default {
   }),
   methods: {
     handleInput(e) {
-      this.content = e.target.innerHTML;
+      this.content = e.target.innerHTML.asString().reverse();
     },
     toggleContentNotes() {
       this.opened = this.titleFocused || this.contentFocused;
