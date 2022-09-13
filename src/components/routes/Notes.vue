@@ -1,9 +1,10 @@
 <template>
   <div
-    class="w-5/12 border shadow-md text-2xl text-gray-900 rounded-lg flex flex-col"
+    class="w-5/12 border shadow-md  text-gray-900 rounded-lg flex flex-col"
   >
-    <div class="flex justify-center pr-2 h-12">
+    <div class="flex justify-center pr-2 h-12 text-2xl">
       <input
+        v-model="title"
         type="text"
         name="title"
         class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none block w-full p-2.5"
@@ -13,14 +14,20 @@
         @click="opened = true"
       />
       <div class="flex items-center h-full">
-        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
+        <div
+          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+        >
           <CheckSquareIcon />
         </div>
-        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
+        <div
+          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+        >
           <BrushIcon class="hover:cursor-pointer" />
         </div>
-        <div class="hover:cursor-pointer hover:bg-blue-100 h-full w-12  flex items-center justify-center rounded-full">
-          <ImageIcon class="hover:cursor-pointer"/>
+        <div
+          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+        >
+          <ImageIcon class="hover:cursor-pointer" />
         </div>
       </div>
     </div>
@@ -33,6 +40,9 @@
       @focusout="handleContentFocusOut"
       v-html="content"
     />
+    <div v-if="opened" class="flex">
+      <button class="btn">Close</button>
+    </div>
   </div>
 </template>
 <script>
@@ -43,7 +53,7 @@ export default {
   components: {
     CheckSquareIcon,
     BrushIcon,
-    ImageIcon
+    ImageIcon,
   },
   data: () => ({
     opened: false,
@@ -51,6 +61,7 @@ export default {
     content: "Take a note...",
     titleFocused: false,
     contentFocused: false,
+    title: "",
   }),
   methods: {
     handleInput(e) {
@@ -80,3 +91,14 @@ export default {
   },
 };
 </script>
+<style>
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+</style>
