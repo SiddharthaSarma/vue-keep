@@ -17,6 +17,6 @@
 </template>
 <script>
 export default {
-  name: "CheckSquare",
+  name: 'CheckSquare',
 };
 </script>

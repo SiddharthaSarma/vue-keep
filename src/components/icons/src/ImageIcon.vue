@@ -14,7 +14,7 @@
   </svg>
 </template>
 <script>
-  export default {
-    name: 'ImageIcon'
-  }
+export default {
+  name: 'ImageIcon',
+};
 </script>

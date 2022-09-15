@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-5/12 border shadow-md  text-gray-900 rounded-lg flex flex-col"
-  >
+  <div class="w-5/12 border shadow-md text-gray-900 rounded-lg flex flex-col">
     <div class="flex justify-center pr-2 h-12 text-2xl">
       <input
         v-model="title"
@@ -46,10 +44,10 @@
   </div>
 </template>
 <script>
-import { debounce } from "../../helpers/index.js";
-import { BrushIcon, CheckSquareIcon, ImageIcon } from "../icons";
+import { debounce } from '../../helpers/index.js';
+import { BrushIcon, CheckSquareIcon, ImageIcon } from '../icons';
 export default {
-  name: "NotesScreen",
+  name: 'NotesScreen',
   components: {
     CheckSquareIcon,
     BrushIcon,
@@ -57,11 +55,11 @@ export default {
   },
   data: () => ({
     opened: false,
-    defaultText: "Take a note...",
-    content: "Take a note...",
+    defaultText: 'Take a note...',
+    content: 'Take a note...',
     titleFocused: false,
     contentFocused: false,
-    title: "",
+    title: '',
   }),
   methods: {
     handleInput(e) {
@@ -74,7 +72,7 @@ export default {
       this.opened = true;
       this.contentFocused = true;
       if (this.defaultText === this.content) {
-        this.content = "";
+        this.content = '';
       }
     },
     handleContentFocusOut: debounce(function () {
@@ -92,7 +90,7 @@ export default {
 };
 </script>
 <style>
-  .btn {
-    @apply font-bold py-2 px-4 rounded;
-  }
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
 </style>

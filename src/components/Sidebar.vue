@@ -22,14 +22,14 @@
 </template>
 <script>
 export default {
-  name: "SidebarComponent",
+  name: 'SidebarComponent',
   props: {
     sidebarList: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     isSidebarOpen: {
-      type: Boolean
+      type: Boolean,
     },
   },
 };

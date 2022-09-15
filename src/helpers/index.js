@@ -1,9 +1,9 @@
 export function debounce(fn, delay) {
   let timeoutID = null;
-  return function() {
+  return function () {
     clearTimeout(timeoutID);
     const args = arguments;
-    timeoutID = setTimeout( () => {
+    timeoutID = setTimeout(() => {
       fn.apply(this, args);
     }, delay);
   };
