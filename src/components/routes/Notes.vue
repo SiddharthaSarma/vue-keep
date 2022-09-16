@@ -5,7 +5,7 @@
         v-model="title"
         type="text"
         name="title"
-        class="text-2xl text-gray-900 text-sm rounded-lg focus:outline-none block w-full p-2.5"
+        class="text-sm text-gray-900 rounded-lg focus:outline-none block w-full p-2.5"
         :placeholder="!opened ? 'Take a note...' : 'Title'"
         @focusin="handleTitleFocusIn"
         @focusout="handleTitleFocusOut"
@@ -38,7 +38,7 @@
       @focusout="handleContentFocusOut"
       v-html="content"
     />
-    <div v-if="opened" class="flex">
+    <div v-if="true" class="flex justify-end p-2">
       <button class="btn">Close</button>
     </div>
   </div>
@@ -91,6 +91,9 @@ export default {
 </script>
 <style>
 .btn {
-  @apply font-bold py-2 px-4 rounded;
+  @apply py-1 px-4 rounded text-sm;
+}
+.btn:hover {
+  @apply bg-blue-50;
 }
 </style>
