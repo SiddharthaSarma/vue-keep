@@ -91,7 +91,7 @@ export default {
 </script>
 <style>
 .btn {
-  @apply py-1 px-4 rounded text-sm;
+  @apply py-2 px-4 rounded text-sm mr-4;
 }
 .btn:hover {
   @apply bg-blue-50;
