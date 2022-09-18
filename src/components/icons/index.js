@@ -1,10 +1,16 @@
 export { default as ArchiveIcon } from './src/ArchiveIcon.vue';
+export { default as ArrowClockWise } from './src/ArrowClockWise.vue';
+export { default as ArrowCounterClockWise } from './src/ArrowCounterClockWise.vue';
 export { default as BellIcon } from './src/BellIcon.vue';
 export { default as BrushIcon } from './src/BrushIcon.vue';
 export { default as BulbIcon } from './src/BulbIcon.vue';
 export { default as CheckSquareIcon } from './src/CheckSquare.vue';
+export { default as FileZipIcon } from './src/FileZipIcon.vue';
 export { default as ImageIcon } from './src/ImageIcon.vue';
 export { default as ListIcon } from './src/List.vue';
+export { default as PaletteIcon } from './src/PaletteIcon.vue';
 export { default as PencilIcon } from './src/PencilIcon.vue';
 export { default as SettingsIcon } from './src/SettingsIcon.vue';
+export { default as ThreeDotsVertical } from './src/ThreeDotsVertical.vue';
 export { default as TrashIcon } from './src/TrashIcon.vue';
+export { default as UserPlusIcon } from './src/UserPlusIcon.vue';

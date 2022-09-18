@@ -38,20 +38,50 @@
       @focusout="handleContentFocusOut"
       v-html="content"
     />
-    <div v-if="true" class="flex justify-end p-2">
-      <button class="btn">Close</button>
+    <div v-if="true" class="flex justify-between items-center p-2">
+      <div class="left flex justify-between w-1/2">
+        <BellIcon />
+        <UserPlusIcon />
+        <PaletteIcon />
+        <ImageIcon />
+        <FileZipIcon />
+        <ThreeDotsVertical />
+        <ArrowCounterClockWise />
+        <ArrowClockWise />
+      </div>
+      <div class="right">
+        <button class="btn">Close</button>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import { debounce } from '../../helpers/index.js';
-import { BrushIcon, CheckSquareIcon, ImageIcon } from '../icons';
+import {
+ArrowClockWise,
+ArrowCounterClockWise,
+BellIcon,
+BrushIcon,
+CheckSquareIcon,
+FileZipIcon,
+ImageIcon,
+PaletteIcon,
+ThreeDotsVertical,
+UserPlusIcon
+} from '../icons';
 export default {
   name: 'NotesScreen',
   components: {
     CheckSquareIcon,
     BrushIcon,
     ImageIcon,
+    BellIcon,
+    UserPlusIcon,
+    PaletteIcon,
+    FileZipIcon,
+    ThreeDotsVertical,
+    ArrowCounterClockWise,
+    ArrowClockWise,
   },
   data: () => ({
     opened: false,
