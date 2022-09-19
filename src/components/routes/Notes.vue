@@ -40,14 +40,30 @@
     />
     <div v-if="true" class="flex justify-between items-center p-2">
       <div class="left flex justify-between w-1/2">
-        <BellIcon />
-        <UserPlusIcon />
-        <PaletteIcon />
-        <ImageIcon />
-        <FileZipIcon />
-        <ThreeDotsVertical />
-        <ArrowCounterClockWise />
-        <ArrowClockWise />
+        <div class="icon">
+          <BellIcon />
+        </div>
+        <div class="icon">
+          <UserPlusIcon />
+        </div>
+        <div class="icon">
+          <PaletteIcon />
+        </div>
+        <div class="icon">
+          <ImageIcon />
+        </div>
+        <div class="icon">
+          <FileZipIcon />
+        </div>
+        <div class="icon">
+          <ThreeDotsVertical />
+        </div>
+        <div class="icon">
+          <ArrowCounterClockWise />
+        </div>
+        <div class="icon">
+          <ArrowClockWise />
+        </div>
       </div>
       <div class="right">
         <button class="btn">Close</button>
@@ -125,5 +141,8 @@ export default {
 }
 .btn:hover {
   @apply bg-blue-50;
+}
+.icon {
+  @apply cursor-pointer hover:bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center;
 }
 </style>
