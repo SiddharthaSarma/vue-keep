@@ -38,7 +38,7 @@
       @focusout="handleContentFocusOut"
       v-html="content"
     />
-    <div v-if="true" class="flex justify-between items-center p-2">
+    <div v-if="opened" class="flex justify-between items-center p-2">
       <div class="left flex justify-between w-1/2">
         <div class="icon">
           <BellIcon />
@@ -58,10 +58,10 @@
         <div class="icon">
           <ThreeDotsVertical />
         </div>
-        <div class="icon">
+        <div class="icon" :class="[disableEditing ? 'disabled' : null]">
           <ArrowCounterClockWise />
         </div>
-        <div class="icon">
+        <div class="icon" :class="[disableEditing ? 'disabled' : null]">
           <ArrowClockWise />
         </div>
       </div>
@@ -106,6 +106,7 @@ export default {
     titleFocused: false,
     contentFocused: false,
     title: '',
+    disableEditing: true
   }),
   methods: {
     handleInput(e) {
@@ -144,5 +145,8 @@ export default {
 }
 .icon {
   @apply cursor-pointer hover:bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center;
+}
+.disabled {
+  @apply opacity-50 pointer-events-none cursor-not-allowed;
 }
 </style>
