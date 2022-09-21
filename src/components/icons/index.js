@@ -10,6 +10,7 @@ export { default as ImageIcon } from './src/ImageIcon.vue';
 export { default as ListIcon } from './src/List.vue';
 export { default as PaletteIcon } from './src/PaletteIcon.vue';
 export { default as PencilIcon } from './src/PencilIcon.vue';
+export { default as PinIcon } from './src/PinIcon.vue';
 export { default as SettingsIcon } from './src/SettingsIcon.vue';
 export { default as ThreeDotsVertical } from './src/ThreeDotsVertical.vue';
 export { default as TrashIcon } from './src/TrashIcon.vue';

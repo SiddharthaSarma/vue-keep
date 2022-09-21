@@ -11,22 +11,26 @@
         @focusout="handleTitleFocusOut"
         @click="opened = true"
       />
-      <div class="flex items-center h-full">
+      <div class="flex items-center h-full" v-if="!opened">
         <div
-          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
+          @click="handleClick"
         >
           <CheckSquareIcon />
         </div>
         <div
-          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
         >
           <BrushIcon class="hover:cursor-pointer" />
         </div>
         <div
-          class="hover:cursor-pointer hover:bg-blue-100 h-full w-12 flex items-center justify-center rounded-full"
+          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
         >
           <ImageIcon class="hover:cursor-pointer" />
         </div>
+      </div>
+      <div class="flex items-center h-full" v-if="opened">
+        <PinIcon />
       </div>
     </div>
     <p
@@ -74,16 +78,17 @@
 <script>
 import { debounce } from '../../helpers/index.js';
 import {
-ArrowClockWise,
-ArrowCounterClockWise,
-BellIcon,
-BrushIcon,
-CheckSquareIcon,
-FileZipIcon,
-ImageIcon,
-PaletteIcon,
-ThreeDotsVertical,
-UserPlusIcon
+  ArrowClockWise,
+  ArrowCounterClockWise,
+  BellIcon,
+  BrushIcon,
+  CheckSquareIcon,
+  FileZipIcon,
+  ImageIcon,
+  PaletteIcon,
+  PinIcon,
+  ThreeDotsVertical,
+  UserPlusIcon,
 } from '../icons';
 export default {
   name: 'NotesScreen',
@@ -98,6 +103,7 @@ export default {
     ThreeDotsVertical,
     ArrowCounterClockWise,
     ArrowClockWise,
+    PinIcon,
   },
   data: () => ({
     opened: false,
@@ -106,11 +112,11 @@ export default {
     titleFocused: false,
     contentFocused: false,
     title: '',
-    disableEditing: true
+    disableEditing: true,
   }),
   methods: {
     handleInput(e) {
-      this.content = e.target.innerHTML.asString().reverse();
+      // this.content = e.target.innerHTML.split('').reverse().join('');
     },
     toggleContentNotes() {
       this.opened = this.titleFocused || this.contentFocused;
@@ -121,6 +127,9 @@ export default {
       if (this.defaultText === this.content) {
         this.content = '';
       }
+    },
+    handleClick() {
+      console.log('handle Click');
     },
     handleContentFocusOut: debounce(function () {
       this.contentFocused = false;
