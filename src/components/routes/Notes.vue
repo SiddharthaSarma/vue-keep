@@ -11,27 +11,25 @@
         @focusout="handleTitleFocusOut"
         @click="opened = true"
       />
-      <div class="flex items-center h-full" v-if="!opened">
-        <div
-          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
-          @click="handleClick"
-        >
-          <CheckSquareIcon />
-        </div>
-        <div
-          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
-        >
-          <BrushIcon class="hover:cursor-pointer" />
-        </div>
-        <div
-          class="hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full"
-        >
-          <ImageIcon class="hover:cursor-pointer" />
-        </div>
+      <div class="flex items-center h-full">
+        <template v-if="!opened">
+          <div class="icon-top" @click="handleClick">
+            <CheckSquareIcon />
+          </div>
+          <div class="icon-top">
+            <BrushIcon />
+          </div>
+          <div class="icon-top">
+            <ImageIcon />
+          </div>
+        </template>
+        <template v-if="opened">
+          <div class="icon-top">
+            <PinIcon />
+          </div>
+        </template>
       </div>
-      <div class="flex items-center h-full" v-if="opened">
-        <PinIcon />
-      </div>
+      <div class="flex items-center h-full" v-if="opened"></div>
     </div>
     <p
       v-if="opened"
@@ -115,7 +113,7 @@ export default {
     disableEditing: true,
   }),
   methods: {
-    handleInput(e) {
+    handleInput() {
       // this.content = e.target.innerHTML.split('').reverse().join('');
     },
     toggleContentNotes() {
@@ -150,12 +148,15 @@ export default {
   @apply py-2 px-4 rounded text-sm mr-4;
 }
 .btn:hover {
-  @apply bg-blue-50;
+  @apply bg-gray-50;
 }
 .icon {
-  @apply cursor-pointer hover:bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center;
+  @apply cursor-pointer hover:bg-gray-200 w-8 h-8 rounded-full flex items-center justify-center;
 }
 .disabled {
   @apply opacity-50 pointer-events-none cursor-not-allowed;
+}
+.icon-top {
+  @apply hover:cursor-pointer hover:bg-gray-200 h-full w-12 flex items-center justify-center rounded-full;
 }
 </style>
