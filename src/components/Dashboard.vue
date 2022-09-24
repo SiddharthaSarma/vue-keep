@@ -41,6 +41,11 @@
             </div>
           </div>
           <div class="flex items-center">
+            <div class="icons flex mr-4 w-16 justify-between">
+              <ArrowCounterClockWise />
+              <ViewListIcon />
+              <GearIcon />
+            </div>
             <RightDashboard />
           </div>
         </div>
@@ -76,12 +81,15 @@ import {
   ListIcon,
   PencilIcon,
   TrashIcon,
+  GearIcon,
+  ViewListIcon,
+  ArrowCounterClockWise
 } from './icons';
 import Sidebar from './Sidebar.vue';
 import RightDashboard from './dashboard/RightDashboard.vue';
 export default {
   name: 'DashboardScreen',
-  components: { ListIcon, Sidebar, RightDashboard },
+  components: { ListIcon, GearIcon, Sidebar, ViewListIcon, ArrowCounterClockWise, RightDashboard },
   data() {
     return {
       isSidebarOpen: true,

@@ -15,3 +15,5 @@ export { default as SettingsIcon } from './src/SettingsIcon.vue';
 export { default as ThreeDotsVertical } from './src/ThreeDotsVertical.vue';
 export { default as TrashIcon } from './src/TrashIcon.vue';
 export { default as UserPlusIcon } from './src/UserPlusIcon.vue';
+export { default as GearIcon } from './src/GearIcon.vue';
+export {default as ViewListIcon} from './src/ViewListIcon.vue';
