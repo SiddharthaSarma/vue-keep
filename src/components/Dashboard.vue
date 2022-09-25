@@ -83,13 +83,20 @@ import {
   TrashIcon,
   GearIcon,
   ViewListIcon,
-  ArrowCounterClockWise
+  ArrowCounterClockWise,
 } from './icons';
 import Sidebar from './Sidebar.vue';
 import RightDashboard from './dashboard/RightDashboard.vue';
 export default {
   name: 'DashboardScreen',
-  components: { ListIcon, GearIcon, Sidebar, ViewListIcon, ArrowCounterClockWise, RightDashboard },
+  components: {
+    ListIcon,
+    GearIcon,
+    Sidebar,
+    ViewListIcon,
+    ArrowCounterClockWise,
+    RightDashboard,
+  },
   data() {
     return {
       isSidebarOpen: true,
