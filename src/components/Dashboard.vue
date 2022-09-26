@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line
 import {
   ArchiveIcon,
   BellIcon,
