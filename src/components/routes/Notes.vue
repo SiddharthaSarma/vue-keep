@@ -13,7 +13,7 @@
       />
       <div class="flex items-center h-full">
         <template v-if="!opened">
-          <div class="icon-top" @click="handleClick">
+          <div class="icon-top" @click="handleCheckListClick">
             <CheckSquareIcon />
           </div>
           <div class="icon-top">
@@ -126,7 +126,7 @@ export default {
         this.content = '';
       }
     },
-    handleClick() {
+    handleCheckListClick() {
       console.log('handle Click');
     },
     handleContentFocusOut: debounce(function () {

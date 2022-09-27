@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="w-full h-full p-4 m-8 overflow-y-auto">
-        <div class="flex justify-center p-4">
+        <div class="flex justify-center p-4 h-screen">
           <router-view></router-view>
         </div>
       </div>
