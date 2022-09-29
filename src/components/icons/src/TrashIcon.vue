@@ -1,8 +1,9 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
+    :width="width"
+    :height="height"
+    :color="color"
     fill="currentColor"
     class="bi bi-trash"
     viewBox="0 0 16 16"
@@ -19,5 +20,19 @@
 <script>
 export default {
   name: 'TrashIcon',
+  props: {
+    width: {
+      type: String,
+      default: '16',
+    },
+    height: {
+      type: String,
+      default: '16',
+    },
+    color: {
+      type: String,
+      default: '#000000',
+    },
+  },
 };
 </script>
