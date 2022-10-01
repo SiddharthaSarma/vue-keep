@@ -41,10 +41,10 @@
             </div>
           </div>
           <div class="flex items-center">
-            <div class="icons flex mr-4 w-16 justify-between">
-              <ArrowCounterClockWise />
-              <ViewListIcon />
-              <GearIcon />
+            <div class="icons flex mr-4 w-28 justify-between">
+              <ArrowCounterClockWise width="20" height="20" />
+              <ViewListIcon width="20" height="20" />
+              <GearIcon width="20" height="20" />
             </div>
             <RightDashboard />
           </div>
