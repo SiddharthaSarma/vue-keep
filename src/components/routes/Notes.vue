@@ -73,6 +73,7 @@
         </div>
       </div>
     </div>
+    <div class="content-container">Content goes heres</div>
   </div>
 </template>
 <script>
