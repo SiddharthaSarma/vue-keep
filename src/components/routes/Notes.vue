@@ -73,7 +73,9 @@
         </div>
       </div>
     </div>
-    <div class="content-container">Content goes heres</div>
+    <div class="content-container">
+      <div class="notes-section" v-for="i in [1,2,3,4,5,6,7]" :key="i">Notes {{i}}</div>
+    </div>
   </div>
 </template>
 <script>
@@ -147,6 +149,15 @@ export default {
 };
 </script>
 <style>
+.content-container {
+  column-count: 5;
+  padding: 1rem;
+}
+.notes-section {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
 .btn {
   @apply py-2 px-4 rounded text-sm mr-4;
 }
