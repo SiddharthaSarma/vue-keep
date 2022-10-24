@@ -73,9 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="content-container">
-      <div class="notes-section" v-for="i in [1,2,3,4,5,6,7]" :key="i">Notes {{i}}</div>
-    </div>
+    <NotesSection />
   </div>
 </template>
 <script>
@@ -93,6 +91,7 @@ import {
   ThreeDotsVertical,
   UserPlusIcon,
 } from '../icons';
+import NotesSection from '../Note.vue'
 export default {
   name: 'NotesScreen',
   components: {
@@ -107,6 +106,7 @@ export default {
     ArrowCounterClockWise,
     ArrowClockWise,
     PinIcon,
+    NotesSection,
   },
   data: () => ({
     opened: false,
