@@ -114,7 +114,6 @@ export default {
     defaultText: 'Take a note...',
     content: 'Take a note...',
     titleFocused: false,
-    contentFocused: false,
     title: '',
     disableEditing: true,
   }),
@@ -125,12 +124,7 @@ export default {
     handleInput() {
       // this.content = e.target.innerHTML.split('').reverse().join('');
     },
-    toggleContentNotes() {
-      // this.opened = this.titleFocused || this.contentFocused;
-    },
     handleContentFocusIn() {
-      // this.opened = true;
-      this.contentFocused = true;
       if (this.defaultText === this.content) {
         this.content = '';
       }
@@ -139,7 +133,6 @@ export default {
       console.log('handle Click');
     },
     handleContentFocusOut: debounce(function () {
-      this.contentFocused = false;
       this.toggleContentNotes();
     }, 100),
     handleTitleFocusIn() {
