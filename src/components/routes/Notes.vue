@@ -36,7 +36,6 @@
           v-if="opened"
           contenteditable="true"
           class="focus-visible:outline-none p-2.5 text-sm"
-          @input="handleInput"
           @focusin="handleContentFocusIn"
           @focusout="handleContentFocusOut"
           v-html="content"
@@ -120,6 +119,7 @@ export default {
   methods: {
     handleNotesOutsideClick() {
       this.opened = false;
+      this.saveContent();
     },  
     handleInput() {
       // this.content = e.target.innerHTML.split('').reverse().join('');
@@ -142,6 +142,10 @@ export default {
       this.titleFocused = false;
       this.toggleContentNotes();
     }, 200),
+
+    saveContent() {
+      // save the content to pinia
+    }
   },
 };
 </script>
