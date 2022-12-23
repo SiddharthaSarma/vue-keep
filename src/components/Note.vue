@@ -1,12 +1,18 @@
 <template>
   <div class="content-container">
-    <div class="notes-section" v-for="i in [1, 2, 3, 4, 5, 6, 7]" :key="i">
-      Notes {{ i }}
+    <div class="notes-section" v-for="note in notes" :key="note">
+      Notes {{ note }}
     </div>
   </div>
 </template>
 <script>
+import NotesService from '@/services/NotesService';
 export default {
   name: 'NotesSection',
+  computed: {
+    notes() {
+      return NotesService.getNotes();
+    },
+  },
 };
 </script>

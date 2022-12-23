@@ -92,6 +92,7 @@ import {
   UserPlusIcon,
 } from '../icons';
 import NotesSection from '../Note.vue'
+import NotesService from '@/services/NotesService';
 export default {
   name: 'NotesScreen',
   components: {
@@ -140,11 +141,11 @@ export default {
     },
     handleTitleFocusOut: debounce(function () {
       this.titleFocused = false;
-      this.toggleContentNotes();
     }, 200),
 
     saveContent() {
       // save the content to pinia
+      NotesService.addNotes(this.title)
     }
   },
 };
