@@ -6,13 +6,10 @@
   </div>
 </template>
 <script>
-import NotesService from '@/services/NotesService';
 export default {
   name: 'NotesSection',
-  computed: {
-    notes() {
-      return NotesService.getNotes();
-    },
-  },
+  props: {
+    notes: Array,
+  }
 };
 </script>

@@ -73,7 +73,7 @@
         </div>
       </div>
     </div>
-    <NotesSection />
+    <NotesSection :notes="notes" />
   </div>
 </template>
 <script>
@@ -116,6 +116,7 @@ export default {
     titleFocused: false,
     title: '',
     disableEditing: true,
+    notes: []
   }),
   methods: {
     handleNotesOutsideClick() {
@@ -142,10 +143,10 @@ export default {
     handleTitleFocusOut: debounce(function () {
       this.titleFocused = false;
     }, 200),
-
     saveContent() {
       // save the content to pinia
-      NotesService.addNotes(this.title)
+      NotesService.addNotes(this.title);
+      this.notes = NotesService.getNotes();
     }
   },
 };
