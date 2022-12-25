@@ -1,27 +1,35 @@
 <template>
   <div class="content-container">
-    <div class="notes-section flex flex-col" v-for="note in notes" :key="note" @mouseover="showIcons = true" @mouseleave="show =false">
+    <div
+      class="notes-section flex flex-col"
+      v-for="note in notes"
+      :key="note"
+      @mouseover="showIcons = true"
+      @mouseleave="showIcons = false"
+    >
       <div class="content">
         {{ note }}
       </div>
-      <div class="icons-section flex pt-2" v-if="showIcons">
-        <div class="icon">
-          <BellIcon />
-        </div>
-        <div class="icon">
-          <UserPlusIcon />
-        </div>
-        <div class="icon">
-          <PaletteIcon />
-        </div>
-        <div class="icon">
-          <ImageIcon />
-        </div>
-        <div class="icon">
-          <FileZipIcon />
-        </div>
-        <div class="icon">
-          <ThreeDotsVertical />
+      <div class="pt-1 h-8">
+        <div class="icons-section flex" v-if="showIcons">
+          <div class="icon">
+            <BellIcon />
+          </div>
+          <div class="icon">
+            <UserPlusIcon />
+          </div>
+          <div class="icon">
+            <PaletteIcon />
+          </div>
+          <div class="icon">
+            <ImageIcon />
+          </div>
+          <div class="icon">
+            <FileZipIcon />
+          </div>
+          <div class="icon">
+            <ThreeDotsVertical />
+          </div>
         </div>
       </div>
     </div>
@@ -51,8 +59,8 @@ export default {
   },
   data() {
     return {
-      showIcons: false
-    }
-  }
+      showIcons: false,
+    };
+  },
 };
 </script>
