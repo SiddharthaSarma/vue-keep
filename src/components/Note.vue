@@ -1,7 +1,7 @@
 <template>
-  <div class="content-container">
+  <div class="pt-5 columns-2 md:columns-3 lg:columns-4">
     <div
-      class="notes-section flex flex-col"
+      class="notes-section flex flex-col break-inside-avoid"
       v-for="note in notes"
       :key="note"
       @mouseover="showIcons = true"
