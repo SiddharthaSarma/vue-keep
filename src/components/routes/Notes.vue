@@ -121,7 +121,10 @@ export default {
   methods: {
     handleNotesOutsideClick() {
       this.opened = false;
-      this.saveContent();
+      if (this.title) {
+        this.saveContent();
+      }
+      this.title = '';
     },  
     handleInput() {
       // this.content = e.target.innerHTML.split('').reverse().join('');
@@ -153,7 +156,7 @@ export default {
 </script>
 <style>
 .content-container {
-  column-count: 5;
+  count: 5;
   padding: 1rem;
 }
 .notes-section {
