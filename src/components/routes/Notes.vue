@@ -138,7 +138,7 @@ export default {
       console.log('handle Click');
     },
     handleContentFocusOut: debounce(function () {
-      this.toggleContentNotes();
+      // this.toggleContentNotes();
     }, 100),
     handleTitleFocusIn() {
       this.titleFocused = true;
