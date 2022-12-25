@@ -1,8 +1,10 @@
 <template>
   <div class="w-full">
-    <div class="w-5/12 border shadow-md text-gray-900 rounded-lg flex flex-col m-auto">
+    <div
+      class="w-5/12 border shadow-md text-gray-900 rounded-lg flex flex-col m-auto"
+    >
       <div v-click-outside="handleNotesOutsideClick" @click="opened = true">
-        <div class="flex justify-center pr-2 h-12 text-2xl" >
+        <div class="flex justify-center pr-2 h-12 text-2xl">
           <input
             v-model="title"
             type="text"
@@ -73,7 +75,9 @@
         </div>
       </div>
     </div>
-    <NotesSection :notes="notes" />
+    <div class="pt-5 columns-2 md:columns-3 lg:columns-6">
+      <NotesSection v-for="note in notes" :key="note.id" :note="note" />
+    </div>
   </div>
 </template>
 <script>
@@ -91,7 +95,7 @@ import {
   ThreeDotsVertical,
   UserPlusIcon,
 } from '../icons';
-import NotesSection from '../Note.vue'
+import NotesSection from '../Note.vue';
 import NotesService from '@/services/NotesService';
 export default {
   name: 'NotesScreen',
@@ -116,7 +120,7 @@ export default {
     titleFocused: false,
     title: '',
     disableEditing: true,
-    notes: []
+    notes: [],
   }),
   methods: {
     handleNotesOutsideClick() {
@@ -125,7 +129,7 @@ export default {
         this.saveContent();
       }
       this.title = '';
-    },  
+    },
     handleInput() {
       // this.content = e.target.innerHTML.split('').reverse().join('');
     },
@@ -148,15 +152,14 @@ export default {
     }, 200),
     saveContent() {
       // save the content to pinia
-      NotesService.addNotes(this.title);
+      NotesService.addNotes({id: crypto.randomUUID(), content: this.title});
       this.notes = NotesService.getNotes();
-    }
+    },
   },
 };
 </script>
 <style>
 .content-container {
-  count: 5;
   padding: 1rem;
 }
 .notes-section {
