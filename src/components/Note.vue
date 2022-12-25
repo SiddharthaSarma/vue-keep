@@ -1,10 +1,10 @@
 <template>
   <div class="content-container">
-    <div class="notes-section flex flex-col" v-for="note in notes" :key="note">
+    <div class="notes-section flex flex-col" v-for="note in notes" :key="note" @mouseover="showIcons = true" @mouseleave="show =false">
       <div class="content">
         {{ note }}
       </div>
-      <div class="icons-section flex">
+      <div class="icons-section flex pt-2" v-if="showIcons">
         <div class="icon">
           <BellIcon />
         </div>
@@ -49,5 +49,10 @@ export default {
   props: {
     notes: Array,
   },
+  data() {
+    return {
+      showIcons: false
+    }
+  }
 };
 </script>
