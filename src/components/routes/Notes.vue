@@ -152,7 +152,7 @@ export default {
     }, 200),
     saveContent() {
       // save the content to pinia
-      NotesService.addNotes({id: crypto.randomUUID(), content: this.title});
+      NotesService.addNotes({ id: crypto.randomUUID(), content: this.title });
       this.notes = NotesService.getNotes();
     },
   },
