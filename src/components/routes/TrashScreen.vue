@@ -9,10 +9,6 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import TrashIcon from '../icons/src/TrashIcon.vue';
-export default {
-  name: 'TrashScreen',
-  components: { TrashIcon },
-};
 </script>

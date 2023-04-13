@@ -1,8 +1,12 @@
-<template>
-  <div>Reminders</div>
-</template>
+<script setup>
+import {ref} from 'vue';
+const content = ref('Reminders');
+</script>
 <script>
 export default {
-  name: 'RemindersScreen',
-};
+  name: 'RemindersSection'
+}
 </script>
+<template>
+  <div>{{ content }}</div>
+</template>
