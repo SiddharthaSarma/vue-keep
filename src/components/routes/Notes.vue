@@ -37,11 +37,11 @@
         <p
           v-if="opened"
           contenteditable="true"
+          ref="contentInput"
           class="focus-visible:outline-none p-2.5 text-sm"
           @focusin="handleContentFocusIn"
           @focusout="handleContentFocusOut"
-          v-html="content"
-        />
+        >{{ content }}</p>
         <div v-if="opened" class="flex justify-between items-center p-2">
           <div class="left flex justify-between w-1/2">
             <div class="icon">
@@ -143,6 +143,7 @@ export default {
     },
     handleContentFocusOut: debounce(function () {
       // this.toggleContentNotes();
+      console.log(this.$refs.contentInput.innerHTML);
     }, 100),
     handleTitleFocusIn() {
       this.titleFocused = true;
@@ -152,7 +153,11 @@ export default {
     }, 200),
     saveContent() {
       // save the content to pinia
-      NotesService.addNotes({ id: crypto.randomUUID(), content: this.title });
+      NotesService.addNotes({
+        id: crypto.randomUUID(),
+        title: this.title,
+        content: this.$refs.contentInput.innerHTML,
+      });
       this.notes = NotesService.getNotes();
     },
   },

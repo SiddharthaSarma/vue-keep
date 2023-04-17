@@ -5,8 +5,9 @@
     @mouseleave="showIcons = false"
   >
     <div class="content">
-      {{ note?.content }}
+      {{ note?.title }}
     </div>
+    <div v-html="note.content"></div>
     <div class="pt-1 h-8">
       <div class="icons-section flex" v-if="showIcons">
         <div class="icon">
