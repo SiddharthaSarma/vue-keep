@@ -4,10 +4,13 @@
     @mouseover="showIcons = true"
     @mouseleave="showIcons = false"
   >
-    <div class="content">
+    <div class="title">
       {{ note?.title }}
+      <div class="icon">
+          <PinIcon />
+        </div>
     </div>
-    <div v-html="note.content"></div>
+    <div class="content" v-html="note.content"></div>
     <div class="pt-1 h-8">
       <div class="icons-section flex" v-if="showIcons">
         <div class="icon">
@@ -40,6 +43,7 @@ import {
   PaletteIcon,
   UserPlusIcon,
   BellIcon,
+PinIcon,
 } from './icons';
 export default {
   name: 'NotesSection',
@@ -50,7 +54,8 @@ export default {
     PaletteIcon,
     UserPlusIcon,
     BellIcon,
-  },
+    PinIcon
+},
   props: {
     note: Object,
   },
@@ -61,3 +66,15 @@ export default {
   },
 };
 </script>
+<style scoped>
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+.content {
+
+}
+
+</style>
